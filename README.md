@@ -70,7 +70,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ### Screenshots
 
-Add screenshots here to showcase the interface. Example:
+Example:
 ![Image Gallery Screenshot](screenshot.png)
 
 ---
