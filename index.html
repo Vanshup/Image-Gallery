@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Gallery</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Times New Roman', Times, serif;
+    }
+    /* Slick Carousel Arrows Styling */
+    .slick-prev, .slick-next {
+      font-size: 24px;
+      color: #fff;
+      z-index: 1;
+    }
+    .slick-prev {
+      left: 10px;
+    }
+    .slick-next {
+      right: 10px;
+    }
+    /* Carousel Enhancements */
+    .carousel {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+    .carousel img {
+      width: auto;
+      height: 250px;
+      border-radius: 10px;
+    }
+    .slick-prev, .slick-next {
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 50%;
+      padding: 10px;
+    }
+    .slick-prev:hover, .slick-next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+    .slick-dots {
+      bottom: 10px;
+    }
+    .slick-dots li button:before {
+      color: #000;
+    }
+    .slick-dots li.slick-active button:before {
+      color: #ff4500; /* Highlight color for active dot */
+    }
+    /* CSS3 Transformations */
+    .gallery-item img {
+      transition: transform 0.3s ease;
+    }
+    .gallery-item img:hover {
+      transform: scale(1.1);
+    }
+    
+    /* Responsive Grid */
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 10px;
+    }
+    .grid-container img {
+      width: auto;
+      height: 250px;
+      border-radius: 8px;
+    }
+  </style>
+  <!-- Slick Carousel CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+  <!-- Slick Carousel JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="#">Image Gallery</a>
+        <div class="ml-auto">
+            <a href="login.html" class="btn btn-outline-primary mr-2">Login</a>
+            <a href="signup.html" class="btn btn-outline-success">Signup</a>
+        </div>
+    </div>
+  </nav>
+
+  <header class="header">
+    <div class="header-content">
+      <h1>Image Gallery</h1>
+      <form class="search-form">
+        <input type="text" id="searchInput" placeholder="Search...">
+        <button type="submit">Search</button>
+      </form>
+    </div>
+  </header>
+
+  <section class="gallery">
+    <div class="container">
+      <div class="row">
+        <div class="gallery-filter">
+          <span class="filter-item active" data-filter="all">All</span>
+          <span class="filter-item" data-filter="Nature">Nature</span>
+          <span class="filter-item" data-filter="Seasons">Seasons</span>
+          <span class="filter-item" data-filter="Art">Art</span>
+          <span class="filter-item" data-filter="Animals">Animals</span>
+        </div>
+      </div>
+      <div class="row">
+        <!-- Gallery Items with Descriptions -->
+        <div class="gallery-item Nature">
+          <div class="gallery-item-inner">
+            <img src="images/nature1.jpg" alt="Nature">
+            <p>Tranquil river winding through a lush forest.</p>
+          </div>
+        </div>
+        <div class="gallery-item Nature">
+          <div class="gallery-item-inner">
+            <img src="images/nature2.jpg" alt="Nature">
+            <p>Vibrant flowers basking in the warm sunlight.</p>
+          </div>
+        </div>
+        <div class="gallery-item Seasons">
+          <div class="gallery-item-inner">
+            <img src="images/season1.jpg" alt="Seasons">
+            <p>A tree depicting the beauty of all four seasons in one frame.</p>
+          </div>
+        </div>
+        <div class="gallery-item Seasons">
+          <div class="gallery-item-inner">
+            <img src="images/season3.jpg" alt="Seasons">
+            <p>A single tree showcased in the distinct beauty of each season.</p>
+          </div>
+        </div>
+        <div class="gallery-item Art">
+          <div class="gallery-item-inner">
+            <img src="images/art1.jpg" alt="Art">
+            <p>A stunning painting of the sun casting tree shadows over a tranquil sea.</p>
+          </div>
+        </div>
+        <div class="gallery-item Animals">
+          <div class="gallery-item-inner">
+            <img src="images/animals1.jpg" alt="Animals">
+            <p>Five playful cats sitting together on a grassy patch.</p>
+          </div>
+        </div>
+        <div class="gallery-item Nature">
+          <div class="gallery-item-inner">
+            <img src="images/nature3.jpg" alt="Nature">
+            <p>A captivating sunset casting warm hues across the sky.</p>
+          </div>
+        </div>
+        <div class="gallery-item Seasons">
+          <div class="gallery-item-inner">
+            <img src="images/season2.jpg" alt="Seasons">
+            <p>A vertical collage of six seasons, each represented by their signature blooms.</p>
+          </div>
+        </div>
+        <div class="gallery-item Animals">
+          <div class="gallery-item-inner">
+            <img src="images/animals2.jpg" alt="Animals">
+            <p>A majestic tiger captured in its natural habitat.</p>
+          </div>
+        </div>
+        <div class="gallery-item Art">
+          <div class="gallery-item-inner">
+            <img src="images/art2.jpg" alt="Art">
+            <p>An evening landscape featuring a historic aqueduct bathed in twilight.</p>
+          </div>
+        </div>
+        <div class="gallery-item Art">
+          <div class="gallery-item-inner">
+            <img src="images/art3.jpg" alt="Art">
+            <p>A handpainted reproduction of Canaletto's "The Entrance to the Grand Canal, Venice."</p>
+          </div>
+        </div>
+        <div class="gallery-item Animals">
+          <div class="gallery-item-inner">
+            <img src="images/animals3.jpg" alt="Animals">
+            <p>Two peacocks engaged in a fierce battle, captured mid-action.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="carousel-section">
+    <div class="carousel">
+      <div><img src="images/animals1.jpg" alt="Animals"></div>
+      <div><img src="images/art2.jpg" alt="Art"></div>
+      <div><img src="images/nature3.jpg" alt="Nature"></div>
+      <div><img src="images/season1.jpg" alt="Seasons"></div>
+      <div><img src="images/animals2.jpg" alt="Animals"></div>
+      <div><img src="images/nature2.jpg" alt="Nature"></div>
+      <!-- Add more items as needed -->
+    </div>
+  </section>
+
+  <section class="responsive-grid">
+    <div class="container">
+      <h2>Responsive Grid Content</h2>
+      <div class="grid-container">
+        <div class="gallery-item Animals">
+          <div class="gallery-item-inner">
+            <img src="images/animals3.jpg" alt="Animals">
+          </div>
+        </div>
+        <div class="gallery-item Art">
+          <div class="gallery-item-inner">
+            <img src="images/art2.jpg" alt="Art">
+          </div>
+        </div>
+        <!-- Add more grid items as needed -->
+      </div>
+    </div>
+  </section>
+
+  <section class="table-section">
+    <div class="container">
+      <h2>Image Details</h2>
+      <table border="1">
+        <tr>
+          <th>Category</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>Nature</td>
+          <td>Tranquil river winding through a lush forest.</td>
+        </tr>
+        <tr>
+          <td>Seasons</td>
+          <td>A tree depicting the beauty of all four seasons in one frame.</td>
+        </tr>
+        <!-- Add more rows as needed -->
+      </table>
+    </div>
+  </section>
+  
+  <footer class="footer">
+    <p>&copy; 2024 Image Gallery. All rights reserved.</p>
+  </footer>
+
+  <script>
+    $(document).ready(function(){
+      $('.carousel').slick({
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: true,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        pauseOnHover: true
+      });
+
+      $('.filter-item').on('click', function() {
+        var filterValue = $(this).attr('data-filter');
+        if (filterValue === 'all') {
+          $('.gallery-item').show();
+        } else {
+          $('.gallery-item').hide();
+          $('.gallery-item.' + filterValue).show();
+        }
+        $('.filter-item').removeClass('active');
+        $(this).addClass('active');
+      });
+    });
+  </script>
+</body>
+</html>

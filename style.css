@@ -1,0 +1,306 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5dc;
+  color: black;
+  padding-top: 56px; /* Adjust for fixed navbar */
+}
+
+.container {
+  max-width: 1170px;
+  margin: auto;
+  padding: 0 15px;
+}
+
+img {
+  width: auto;
+  height: 200px;
+  max-width: 100%;
+  display: block;
+  margin: auto;
+}
+
+/* Flex and Grid Layouts */
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px; /* Adjust this value to increase or decrease the space between images */
+  place-items: center;
+}
+
+.grid-item {
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.gallery-item-inner img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Header */
+.header {
+  background: #333;
+  color: white;
+  padding: 20px 0;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.nav-left, .nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.nav-left a {
+  margin-right: 15px;
+  color: white;
+  text-decoration: none;
+}
+
+.nav-right {
+  align-items: center;
+}
+
+.nav-right .search-form {
+  display: flex;
+}
+
+.nav-right .search-form input[type="text"] {
+  padding: 8px;
+  border-radius: 4px;
+  width: 200px;
+}
+
+.nav-right .search-form button {
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+.nav-right .search-form button:hover {
+  background-color: #45a049;
+}
+
+.auth-link {
+  color: white;
+  margin-left: 15px;
+  text-decoration: none;
+}
+
+.auth-link:hover {
+  text-decoration: underline;
+}
+
+/* Gallery */
+.gallery {
+  padding: 20px 0;
+}
+
+.gallery-filter {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.filter-item {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 0 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: white;
+}
+
+.filter-item.active {
+  background-color: #4CAF50;
+  color: white;
+  border-color: #4CAF50;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.gallery-item {
+  flex: 1;
+  min-width: 300px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.gallery-item-inner {
+  text-align: center;
+}
+
+.gallery-item p {
+  margin: 10px 0 0;
+  font-size: 14px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .nav-right .search-form input[type="text"] {
+    width: 150px;
+  }
+
+  .gallery-item {
+    min-width: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-right .search-form input[type="text"] {
+    width: 100px;
+  }
+
+  .gallery-item {
+    min-width: 100%;
+  }
+}
+
+/* Login and Signup Pages */
+.login-container, .signup-container {
+  width: 300px;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+
+label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+p {
+  text-align: center;
+}
+
+p a {
+  color: #333;
+  text-decoration: none;
+}
+
+p a:hover {
+  text-decoration: underline;
+}
+
+/* Gallery Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.gallery-item.show {
+  animation: fadeIn 0.5s ease;
+}
+
+.gallery-item.hide {
+  display: none;
+}
+
+/* Utility Classes */
+.card {
+  border-radius: 8px;
+}
+
+.form-control {
+  border-radius: 4px;
+}
+
+.btn {
+  border-radius: 4px;
+}
+/* Carousel Section */
+.carousel-section {
+  padding: 20px 0;
+}
+
+.carousel img {
+  width: auto;
+  height: 200px;
+  display: block;
+}
+
+/* Slick Carousel Arrows */
+.slick-prev, .slick-next {
+  font-size: 24px; /* Adjust as needed */
+  color: #000; /* Arrow color */
+  z-index: 1; /* Ensure arrows are on top */
+}
+
+.slick-prev {
+  left: 10px; /* Adjust as needed */
+}
+
+.slick-next {
+  right: 10px; /* Adjust as needed */
+}
+
+
+.slick-prev:hover, .slick-next:hover {
+  color: #4CAF50; /* Color change on hover */
+}
+
+.slick-prev::before, .slick-next::before {
+  font-family: 'FontAwesome'; /* Ensure FontAwesome is included */
+  content: '\f053'; /* FontAwesome icon for previous arrow */
+}
+
+.slick-next::before {
+  content: '\f054'; /* FontAwesome icon for next arrow */
+}
