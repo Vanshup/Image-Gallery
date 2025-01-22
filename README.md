@@ -71,7 +71,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ### Screenshots
 
 Example:
-![Image Gallery Screenshot](screenshot.png)
+![Image Gallery Screenshot](images/Screenshot.png)
 
 ---
 
